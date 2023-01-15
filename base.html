@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-do list</title>
+    <title>Quotes app</title>
 
     <link href=”https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css” rel=”stylesheet” integrity=”sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3″ crossorigin=”anonymous”>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
@@ -17,12 +17,12 @@
 
 <body style="background: linear-gradient(to bottom right, #00ccff 0%, #cc99ff 100%);">
     <div   style="margin-top: 50px;padding:50px;font-family: Tahoma, sans-serif; " class="ui container">
-        <h1 class="ui center aligned header">To-do list</h1>
+        <h1 class="ui center aligned header">Quotes app</h1>
 
         <form class="ui form" action="/add" method="POST">
             <div class="field">
                 <label>Task </label>
-                <input type="text" name="title" placeholder="Enter Tasks"><br>
+                <input type="text" name="title" placeholder="Share Quotes for everyone to see"><br>
             </div>
             <button class="ui blue button" style="display:block; margin: 0 auto;" type="submit">Add</button>
         </form>
@@ -34,15 +34,15 @@
             <p class="ui big header">{{todo.id }} | {{ todo.task }}</p>
 
             {% if todo.complete == False %}
-            <span class="ui gray label">Not Complete</span>
+            <span class="ui gray label"> </span>
             {% else %}
-            <span class="ui green label">Completed</span>
+            <span class="ui green label">Liked</span>
             {% endif %}
             
             {% if todo.complete == False %}
-            <a class="ui blue button" href="/update/{{ todo.id }}">Finished</a>
+            <a class="ui blue button" href="/update/{{ todo.id }}">Like</a>
             {% else %}
-            <a class="ui blue button" href="/update/{{ todo.id }}">Not Finished</a>
+            <a class="ui blue button" href="/update/{{ todo.id }}">Ignore</a>
             {% endif %}
             <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
         </div>
